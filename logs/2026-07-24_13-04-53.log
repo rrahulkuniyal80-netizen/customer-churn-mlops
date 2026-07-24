@@ -1,0 +1,13 @@
+[2026-07-24 13:04:53,330] INFO - data_ingestion_pipeline_started
+[2026-07-24 13:04:53,330] INFO - Reading The Dataset
+[2026-07-24 13:04:53,347] INFO - Splitting The Dataset
+[2026-07-24 13:04:53,350] INFO - Saving train and test datasets
+[2026-07-24 13:04:53,378] INFO - Data Ingestion Completed
+[2026-07-24 13:04:53,379] INFO - data_ingestion_pipeline_completed
+[2026-07-24 13:04:53,379] INFO - data_validation_pipeline_started
+[2026-07-24 13:04:53,379] INFO - Data_validation_started
+[2026-07-24 13:04:53,432] INFO - Checking Validation
+[2026-07-24 13:04:53,433] INFO - Validation status: True
+[2026-07-24 13:04:53,433] INFO - Validation_completed
+[2026-07-24 13:04:53,434] INFO - data_validation_pipeline_completed
+[2026-07-24 13:04:53,434] INFO - data_Transformation_pipeline_started

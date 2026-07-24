@@ -24,20 +24,20 @@ class DataTransformation:
 
     def get_preprocessor(self, X_train):
 
-        num_columns = X_train.select_dtypes(include=['number'])
-        cat_columns = X_train.select_dtypes(include=['object'])
+        num_columns = X_train.select_dtypes(include=['number']).columns
+        cat_columns = X_train.select_dtypes(include=['object']).columns
 
         num_pipeline = Pipeline(
             steps= [
                 ("scaler", StandardScaler())
             ]
-        ).columns
+        )
 
         cat_pipeline = Pipeline(
             steps=[
                 ("encoder", OneHotEncoder(handle_unknown="ignore"))
             ]
-        ).columns
+        )
 
         preprocessor = ColumnTransformer(
             transformers=[
@@ -51,12 +51,16 @@ class DataTransformation:
 
 
     def initiate_data_transformation(self):
+        logger.info("Data Transformation Started")
+        logger.info("Reading Training And Testing Data")
+
         train_df = pd.read_csv(self.config.train_data_path)
         test_df = pd.read_csv(self.config.test_data_path)
+        logger.info("Cleaning Training And Testing Data")
 
         train_df, test_df = self.clean_data(
         train_df,test_df)
-
+        
         X_train = train_df.drop(columns=["Churn"])
         y_train = train_df["Churn"]
 
@@ -67,12 +71,15 @@ class DataTransformation:
         y_train = label_encoder.fit_transform(y_train)
         y_test = label_encoder.transform(y_test)
 
+        logger.info("Preprocessing Started")
         preprocessor = self.get_preprocessor(X_train)
 
         X_train = preprocessor.fit_transform(X_train)
 
         X_test = preprocessor.transform(X_test)
+        logger.info("Preprocessing Completed")
 
+        logger.info("Saving Preprocessor.pkl")
         save_object(file_path=self.config.preprocessor_obj_file_path, obj=preprocessor)
 
         return X_train, X_test, y_train, y_test

@@ -1,7 +1,7 @@
 from src.utils.common import read_yaml
 from pathlib import Path
-from src.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
-
+from src.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
+import os 
 
 class ConfigurationManager:
 
@@ -42,4 +42,12 @@ class ConfigurationManager:
             train_data_path= Path(self.config["data_ingestion"]["train_data_path"]),
             test_data_path= Path(self.config["data_ingestion"]["test_data_path"]),
             preprocessor_obj_file_path= Path(config["preprocessor_obj_file_path"])
+        )
+
+    def get_model_trainer_config(self)-> ModelTrainerConfig:
+
+        config = self.config["model_trainer"]
+        return ModelTrainerConfig(
+            root_dir=Path(config["root_dir"]),
+            model_path=Path(config["model_path"])
         )
