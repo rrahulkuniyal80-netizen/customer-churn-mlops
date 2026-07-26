@@ -8,6 +8,7 @@ class ConfigurationManager:
     def __init__(self):
         self.config = read_yaml(Path("config/config.yaml"))
         self.params = read_yaml(Path("params/params.yaml"))
+        
 
     def get_data_ingestion_config(self):
         config = self.config["data_ingestion"]
@@ -47,7 +48,13 @@ class ConfigurationManager:
     def get_model_trainer_config(self)-> ModelTrainerConfig:
 
         config = self.config["model_trainer"]
+        params = self.params["model_trainer"]
+        mlflow_config = self.config["mlflow"]
         return ModelTrainerConfig(
             root_dir=Path(config["root_dir"]),
-            model_path=Path(config["model_path"])
+            model_path=Path(config["model_path"]),
+            C=  params["C"],
+            max_iter= params["max_iter"],
+            random_state= params["random_state"],
+            experiment_name=mlflow_config["experiment_name"]
         )

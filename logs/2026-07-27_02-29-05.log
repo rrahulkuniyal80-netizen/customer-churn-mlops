@@ -1,0 +1,21 @@
+[2026-07-27 02:29:09,106] INFO - data_ingestion_pipeline_started
+[2026-07-27 02:29:09,107] INFO - Reading The Dataset
+[2026-07-27 02:29:09,138] INFO - Splitting The Dataset
+[2026-07-27 02:29:09,141] INFO - Saving train and test datasets
+[2026-07-27 02:29:09,172] INFO - Data Ingestion Completed
+[2026-07-27 02:29:09,173] INFO - data_ingestion_pipeline_completed
+[2026-07-27 02:29:09,173] INFO - data_validation_pipeline_started
+[2026-07-27 02:29:09,173] INFO - Data_validation_started
+[2026-07-27 02:29:09,232] INFO - Checking Validation
+[2026-07-27 02:29:09,232] INFO - Validation status: True
+[2026-07-27 02:29:09,233] INFO - Validation_completed
+[2026-07-27 02:29:09,233] INFO - data_validation_pipeline_completed
+[2026-07-27 02:29:09,233] INFO - data_Transformation_pipeline_started
+[2026-07-27 02:29:09,233] INFO - Data Transformation Started
+[2026-07-27 02:29:09,233] INFO - Reading Training And Testing Data
+[2026-07-27 02:29:09,254] INFO - Cleaning Training And Testing Data
+[2026-07-27 02:29:09,340] INFO - Preprocessing Started
+[2026-07-27 02:29:09,412] INFO - Preprocessing Completed
+[2026-07-27 02:29:09,412] INFO - Saving Preprocessor.pkl
+[2026-07-27 02:29:09,417] INFO - data_transformation_pipeline_completed
+[2026-07-27 02:29:09,417] INFO - Model_trainer_pipeline_started

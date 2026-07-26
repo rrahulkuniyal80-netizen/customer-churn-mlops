@@ -29,4 +29,8 @@ class DataTransformationConfig:
 class ModelTrainerConfig:
     root_dir: Path
     model_path: Path
-
+    C: float
+    max_iter: int 
+    random_state: int
+    experiment_name: str
+    

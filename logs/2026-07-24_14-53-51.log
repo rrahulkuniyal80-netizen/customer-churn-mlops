@@ -1,0 +1,28 @@
+[2026-07-24 14:53:52,084] INFO - data_ingestion_pipeline_started
+[2026-07-24 14:53:52,085] INFO - Reading The Dataset
+[2026-07-24 14:53:52,109] INFO - Splitting The Dataset
+[2026-07-24 14:53:52,115] INFO - Saving train and test datasets
+[2026-07-24 14:53:52,154] INFO - Data Ingestion Completed
+[2026-07-24 14:53:52,155] INFO - data_ingestion_pipeline_completed
+[2026-07-24 14:53:52,155] INFO - data_validation_pipeline_started
+[2026-07-24 14:53:52,155] INFO - Data_validation_started
+[2026-07-24 14:53:52,210] INFO - Checking Validation
+[2026-07-24 14:53:52,211] INFO - Validation status: True
+[2026-07-24 14:53:52,212] INFO - Validation_completed
+[2026-07-24 14:53:52,212] INFO - data_validation_pipeline_completed
+[2026-07-24 14:53:52,212] INFO - data_Transformation_pipeline_started
+[2026-07-24 14:53:52,212] INFO - Data Transformation Started
+[2026-07-24 14:53:52,212] INFO - Reading Training And Testing Data
+[2026-07-24 14:53:52,232] INFO - Cleaning Training And Testing Data
+[2026-07-24 14:53:52,300] INFO - Preprocessing Started
+[2026-07-24 14:53:52,382] INFO - Preprocessing Completed
+[2026-07-24 14:53:52,382] INFO - Saving Preprocessor.pkl
+[2026-07-24 14:53:52,388] INFO - data_transformation_pipeline_completed
+[2026-07-24 14:53:52,388] INFO - Model_trainer_pipeline_started
+[2026-07-24 14:53:52,388] INFO - Model training started.
+[2026-07-24 14:53:52,475] INFO - Accuracy Score: 0.8217329545454546
+[2026-07-24 14:53:52,475] INFO - Precision Score: 0.6871165644171779
+[2026-07-24 14:53:52,475] INFO - Recall Score: 0.6005361930294906
+[2026-07-24 14:53:52,475] INFO - F1 Score: 0.6409155937052933
+[2026-07-24 14:53:52,477] INFO - Trained model saved successfully.
+[2026-07-24 14:53:52,477] INFO - Model_trainer_pipeline_completed

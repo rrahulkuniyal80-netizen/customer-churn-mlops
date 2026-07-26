@@ -1,0 +1,11 @@
+stages:
+  pipeline:
+    cmd: python main.py
+    deps:
+     - main.py
+     - src
+     - config
+     - params
+     - data
+    outs: 
+      - artifacts

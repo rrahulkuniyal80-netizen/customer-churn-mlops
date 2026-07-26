@@ -1,0 +1,35 @@
+schema: '2.0'
+stages:
+  pipeline:
+    cmd: python main.py
+    deps:
+    - path: config
+      hash: md5
+      md5: 35fb2a8ba9ac228e8a049b0c85d01131.dir
+      size: 1132
+      nfiles: 2
+    - path: data
+      hash: md5
+      md5: 59ad2fdcbcef288ec59e7fd9e91ec3e4.dir
+      size: 977501
+      nfiles: 1
+    - path: main.py
+      hash: md5
+      md5: a09b940501a4cf35b78b451b6e051126
+      size: 155
+    - path: params
+      hash: md5
+      md5: 4b41e803b711e78813081778714f1e3d.dir
+      size: 57
+      nfiles: 1
+    - path: src
+      hash: md5
+      md5: adc9cadfd6487a4d882e1b513d9b3edf.dir
+      size: 39331
+      nfiles: 24
+    outs:
+    - path: artifacts
+      hash: md5
+      md5: fa3d8d645cefe4e435536fe47ced6b7b.dir
+      size: 1105257
+      nfiles: 5

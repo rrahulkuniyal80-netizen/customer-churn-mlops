@@ -19,3 +19,6 @@ data_transformation:
 model_trainer:
   root_dir: artifacts/model_trainer
   model_path: artifacts/model_trainer/model.pkl
+
+mlflow:
+  experiment_name: Customer Churn Prediction
