@@ -37,8 +37,8 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker push rahulkuniyal80/customer-churn-mlops .
+          docker build -t rahulkuniyal80/customer-churn-mlops:latest .
 
       - name: Push Docker Image
         run: |
-          docker push rahulkuniyal80/customer-churn-mlops:latest
+          docker push rahulkuniyal80/customer-churn-mlops 
