@@ -1,91 +1,144 @@
-# Customer Churn Prediction MLOps Pipeline
+# 🚀 Customer Churn Prediction API | End-to-End MLOps Pipeline
 
-An end-to-end MLOps project for predicting customer churn using Scikit-Learn. This project demonstrates a complete machine learning workflow, including data ingestion, validation, transformation, model training, experiment tracking with MLflow, data versioning with DVC, and remote storage using AWS S3.
-
----
-
-## Project Overview
-
-Customer churn prediction helps businesses identify customers who are likely to leave their services. This project builds a Logistic Regression model and packages the entire workflow into a reproducible MLOps pipeline.
-
-The project focuses on:
-
-- Modular pipeline architecture
-- Configuration-driven development
-- Experiment tracking using MLflow
-- Data and artifact versioning using DVC
-- Remote storage with AWS S3
-- Reproducible machine learning workflows
+![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.116-green?style=for-the-badge&logo=fastapi)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
+![AWS EC2](https://img.shields.io/badge/AWS-EC2-orange?style=for-the-badge&logo=amazonaws)
+![DVC](https://img.shields.io/badge/DVC-3.x-purple?style=for-the-badge)
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-blue?style=for-the-badge)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-red?style=for-the-badge&logo=scikitlearn)
 
 ---
 
-## Tech Stack
+# 📌 Project Overview
 
-| Category | Tools |
-|----------|-------|
-| Language | Python |
-| ML Library | Scikit-Learn |
+This project demonstrates a complete **End-to-End MLOps workflow** for predicting customer churn using Machine Learning.
+
+It covers the complete lifecycle of an ML project—from data ingestion and preprocessing to model training, experiment tracking, data versioning, API development, containerization, and cloud deployment.
+
+The application is deployed as a **FastAPI REST API** inside a **Docker container** on **AWS EC2**, with datasets and model artifacts versioned using **DVC** and stored remotely on **AWS S3**.
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                    Client
+                       │
+                       ▼
+              FastAPI REST API
+                       │
+                       ▼
+              Prediction Pipeline
+                       │
+        ┌──────────────┴──────────────┐
+        ▼                             ▼
+ preprocessor.pkl                model.pkl
+        │                             │
+        └──────────────┬──────────────┘
+                       ▼
+               Churn Prediction
+                       │
+                       ▼
+                 JSON Response
+```
+
+---
+
+# ☁️ Deployment Architecture
+
+```text
+            GitHub Repository
+                    │
+                    ▼
+             AWS EC2 Instance
+                    │
+             Docker Container
+                    │
+                  FastAPI
+                    │
+         Customer Churn Model
+                    │
+              Prediction API
+```
+
+---
+
+# ✨ Features
+
+- End-to-End MLOps Pipeline
+- Modular Project Structure
+- Configuration Driven Development
+- Scikit-Learn Pipeline
+- Data Validation
+- Feature Engineering
+- Logistic Regression Model
+- MLflow Experiment Tracking
+- DVC Data & Model Versioning
+- AWS S3 Remote Storage
+- FastAPI REST API
+- Dockerized Deployment
+- AWS EC2 Deployment
+- Interactive Swagger Documentation
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technology |
+|------------|----------------|
+| Programming Language | Python |
+| Machine Learning | Scikit-Learn |
 | Data Processing | Pandas, NumPy |
 | Visualization | Matplotlib |
+| API | FastAPI |
+| API Server | Uvicorn |
 | Experiment Tracking | MLflow |
 | Data Versioning | DVC |
-| Remote Storage | AWS S3 |
+| Cloud Storage | AWS S3 |
+| Cloud Platform | AWS EC2 |
+| Containerization | Docker |
 | Configuration | YAML |
 | Version Control | Git & GitHub |
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
 ```text
 customer-churn-mlops/
+
+├── app.py
+├── main.py
+├── Dockerfile
+├── README.md
+├── dvc.yaml
+├── dvc.lock
+├── data.dvc
+├── requirement.txt
 │
 ├── config/
-│   ├── config.yaml
-│   └── schema.yaml
-│
 ├── params/
-│   └── params.yaml
-│
 ├── data/
-│
 ├── artifacts/
-│
-├── notebook/
+├── images/
 │
 ├── src/
 │   ├── components/
-│   │   ├── data_ingestion.py
-│   │   ├── data_validation.py
-│   │   ├── data_transformation.py
-│   │   └── model_trainer.py
-│   │
 │   ├── config/
-│   │   └── configuration.py
-│   │
 │   ├── entity/
-│   │   └── config_entity.py
-│   │
 │   ├── pipeline/
-│   │   └── training_pipeline.py
-│   │
 │   ├── utils/
-│   │   └── common.py
-│   │
 │   └── logger.py
 │
-├── main.py
-├── dvc.yaml
-├── requirements.txt
-├── README.md
-└── .gitignore
+└── notebook/
 ```
 
 ---
 
-## Pipeline Workflow
+# ⚙️ Pipeline Workflow
 
-```
+```text
 Raw Dataset
       │
       ▼
@@ -107,28 +160,15 @@ Model Training
 MLflow Tracking
       │
       ▼
-Artifacts & Model Saving
+Model Serialization
+      │
+      ▼
+FastAPI Prediction API
 ```
 
 ---
 
-## Features
-
-- Modular MLOps architecture
-- Configuration-driven pipeline
-- Data preprocessing using Scikit-Learn Pipelines
-- Logistic Regression model training
-- MLflow experiment tracking
-- Automatic metric logging
-- Confusion Matrix generation
-- Classification Report generation
-- Model serialization
-- DVC pipeline for reproducibility
-- AWS S3 remote storage for DVC
-
----
-
-## MLflow Tracking
+# 📊 MLflow Experiment Tracking
 
 The project tracks:
 
@@ -153,21 +193,21 @@ The project tracks:
 
 ---
 
-## DVC Pipeline
+# 🔄 DVC Pipeline
 
-Run the complete pipeline:
+Run complete pipeline
 
 ```bash
 dvc repro
 ```
 
-Push tracked artifacts to AWS S3:
+Push artifacts
 
 ```bash
 dvc push
 ```
 
-Pull artifacts:
+Pull artifacts
 
 ```bash
 dvc pull
@@ -175,61 +215,54 @@ dvc pull
 
 ---
 
-## Installation
+# 🚀 API Endpoints
 
-Clone the repository
+| Method | Endpoint | Description |
+|----------|------------|----------------|
+| GET | / | Health Check |
+| POST | /predict | Predict Customer Churn |
+| GET | /docs | Interactive Swagger UI |
+
+---
+
+# 🐳 Docker Deployment
+
+Build Docker image
 
 ```bash
-git clone https://github.com/<your-username>/customer-churn-mlops.git
+docker build -t customer-churn-api .
 ```
 
-Move into the project
+Run Docker container
 
 ```bash
-cd customer-churn-mlops
-```
-
-Create a virtual environment
-
-```bash
-conda create -n mlops python=3.13
-```
-
-Activate the environment
-
-```bash
-conda activate mlops
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
+docker run -d -p 8000:8000 customer-churn-api
 ```
 
 ---
 
-## Running the Project
+# ☁️ AWS Deployment
 
-Execute the training pipeline
+Deployment Steps
 
-```bash
-python main.py
-```
-
-or using DVC
-
-```bash
-dvc repro
-```
+- Launch EC2 Instance
+- Configure Security Groups
+- Install Docker
+- Configure AWS CLI
+- Pull DVC artifacts from AWS S3
+- Build Docker Image
+- Run FastAPI Container
+- Access Swagger Documentation
 
 ---
 
-## Dataset
+# 📊 Dataset
 
-**Dataset:** Telco Customer Churn Dataset
+Dataset:
 
-Target Variable:
+**Telco Customer Churn Dataset**
+
+Target Variable
 
 ```
 Churn
@@ -237,60 +270,114 @@ Churn
 
 ---
 
-## Results
+# 📈 Model Performance
 
-Current model:
+Current Model
 
 - Logistic Regression
 
-Tracked using MLflow:
+Tracked Metrics
 
 - Accuracy
 - Precision
 - Recall
 - F1 Score
 
-Generated artifacts:
+Artifacts
 
+- Trained Model
 - Confusion Matrix
 - Classification Report
-- Trained Model
 
 ---
 
-## Future Improvements
+# 📸 Project Screenshots
 
-- Docker
-- FastAPI Deployment
+## 🚀 FastAPI Swagger UI
+
+The FastAPI application provides an interactive Swagger UI for testing API endpoints directly from the browser.
+
+![Swagger UI](images/swagger_ui.png)
+
+---
+
+## 📝 Customer Churn Prediction Request
+
+Example JSON payload submitted to the `/predict` endpoint.
+
+![Prediction Request](images/prediction-request.png)
+
+---
+
+## ✅ Prediction Response
+
+Prediction returned by the deployed FastAPI application after processing customer information.
+
+![Prediction Response](images/prediction-response.png)
+
+---
+
+## 📊 MLflow Experiment Runs
+
+MLflow experiment tracking showing all training runs recorded during model development.
+
+![MLflow Runs](images/mlflow.png)
+
+---
+
+## 📈 MLflow Metrics Dashboard
+
+Comparison of evaluation metrics across different experiment runs using the MLflow dashboard.
+
+![MLflow Dashboard](images/mlflow-dashboard.png)
+
+---
+
+## ☁️ AWS EC2 Deployment
+
+The FastAPI application is deployed inside a Docker container on an AWS EC2 instance.
+
+![AWS EC2 Instance](images/ec2-instance.png)
+
+# ⚡ Challenges Solved
+
+During deployment, several practical engineering challenges were encountered and resolved:
+
+- Configured DVC with AWS S3
+- Managed model artifacts outside Git
+- Resolved Docker build context issues
+- Fixed `.dockerignore` excluding model artifacts
+- Solved Docker storage limitations on EC2
+- Configured EC2 Security Groups
+- Dockerized FastAPI deployment
+- Successfully served ML predictions through a public REST API
+
+---
+
+# 🔮 Future Improvements
+
 - GitHub Actions CI/CD
-- Kubernetes
-- Model Monitoring
-- Automated Retraining Pipeline
+- Kubernetes Deployment
+- Monitoring & Logging
+- Automated Model Retraining
+
 
 ---
 
-## Screenshots
-
-### MLflow Dashboard
-
-_Add screenshot here_
-
-### DVC Pipeline
-
-_Add screenshot here_
-
-### AWS S3 Remote Storage
-
-_Add screenshot here_
-
----
-
-## Author
+# 👨‍💻 Author
 
 **Nand Kishor**
 
-GitHub:https://github.com/rrahulkuniyal80-netizen/customer-churn-mlops/new/main?filename=README.md
+### GitHub
 
-LinkedIn:https://www.linkedin.com/in/nand-kishor-11077924b/
+https://github.com/rrahulkuniyal80-netizen/customer-churn-mlops
+
+### LinkedIn
+
+[https://www.linkedin.com/in/nand-kishor-11077924b/](https://www.linkedin.com/in/nand-kishor-11077924b/)
 
 ---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
