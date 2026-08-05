@@ -2,7 +2,7 @@
 .gitignore
 .dvc
 
-artifacts/
+
 logs/
 __pycache__/
 *.pyc
